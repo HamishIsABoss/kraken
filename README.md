@@ -35,4 +35,7 @@ Add the following dependecy to your `project.clj` file.
 (def generic-player-id "RANDOM-ALPHANUMERIC-STRING")
 
 (player my-api-key "eu" generic-player-id)
+
+;; Get data from randomly sampled matches
+(samples my-api-key "sa")
 ```
