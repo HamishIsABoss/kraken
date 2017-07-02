@@ -2,7 +2,7 @@
 
 Kraken is a wrapper of the official [Vainglory API](https://developer.vainglorygame.com/).
 
-This version of Kraken implements the core endpoints of the API, such as matches, players and samples.
+This version of Kraken implements the core endpoints of the API, such as matches, players and samples and returns the data in a standard Clojure map.
 
 *Please note: this is my first non-exercise program in Clojure - chances are it is pretty bad...*
 
@@ -20,7 +20,7 @@ Add the following dependecy to your `project.clj` file.
 ;; Store API key for later use
 (def my-api-key "XXX-SECRET-XXX")
 
-;; Get data for all matches on the North America server without parameters
+;; Get data for all matches on the North America server
 (matches my-api-key "na")
 
 ;; Optional parameters can be supplied
@@ -30,4 +30,9 @@ Add the following dependecy to your `project.clj` file.
                       "page[limit]" "3"})
 
 (matches my-api-key "na" my-match-params)
+
+;; Get data for an individual player
+(def generic-player-id "RANDOM-ALPHANUMERIC-STRING")
+
+(player my-api-key "eu" generic-player-id)
 ```
