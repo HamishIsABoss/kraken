@@ -16,11 +16,13 @@
 ;; API
 
 (defn api-response
+  "Returns raw data from endpoint"
   [url headers & params]
   (client/get url {:headers headers
                    :params params}))
 
 (defn- plural-endpoint
+  "Returns a function to get data from an endpoint that returns a collection of objects"
   [endpoint]
   (fn [api-key region & params]
     (->
@@ -30,6 +32,7 @@
       (parse-string true))))
 
 (defn- singular-endpoint
+  "Returns a function to get data from an endpoint that returns a single object"
   [endpoint]
   (fn [api-key region id]
     (->
