@@ -7,4 +7,3 @@
                  [cheshire "5.7.1"]
                  [clj-http-lite "0.3.0"]
                  [environ "1.1.0"]])
-

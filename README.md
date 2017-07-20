@@ -13,12 +13,18 @@ Add the following dependecy to your `project.clj` file.
 ```
 # Configuration
 
-Kraken fetches your API key from your environment variables using [Environ](https://github.com/weavejester/environ). You can set your key in one of two ways.
+Kraken fetches your API key from your environment variables using [Environ](https://github.com/weavejester/environ). You can set your key in one of two ways:
 
 In `~/.lein/profiles.clj`:
 
 ```clojure
 {:user {:env {:forecast-key "xxx-secret-xxx"}}}
+```
+
+Or, set it as an environment variable:
+
+```bash
+FORECAST_KEY=xxx-secret-xxx
 ```
 
 # Examples
