@@ -18,13 +18,13 @@ Kraken fetches your API key from your environment variables using [Environ](http
 In `~/.lein/profiles.clj`:
 
 ```clojure
-{:user {:env {:forecast-key "xxx-secret-xxx"}}}
+{:user {:env {:vg-key "xxx-secret-xxx"}}}
 ```
 
 Or, set it as an environment variable:
 
 ```bash
-FORECAST_KEY=xxx-secret-xxx
+VG_KEY=xxx-secret-xxx
 ```
 
 # Examples
