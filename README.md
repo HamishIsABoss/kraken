@@ -33,8 +33,11 @@ VG_KEY=xxx-secret-xxx
 
 ;; Get data for all matches on the North America server
 <<<<<<< HEAD
+<<<<<<< HEAD
 (matches "na")
 =======
+=======
+>>>>>>> e76a0794449a9f6e2fa6245bf6d33de601630da3
 (matches my-api-key "na")
 >>>>>>> e76a0794449a9f6e2fa6245bf6d33de601630da3
 
@@ -48,11 +51,15 @@ VG_KEY=xxx-secret-xxx
 (matches "na" my-match-params)
 =======
 (matches my-api-key "na" my-match-params)
+<<<<<<< HEAD
+>>>>>>> e76a0794449a9f6e2fa6245bf6d33de601630da3
+=======
 >>>>>>> e76a0794449a9f6e2fa6245bf6d33de601630da3
 
 ;; Get data for an individual player
 (def generic-player-id "RANDOM-ALPHANUMERIC-STRING")
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 (player "eu" generic-player-id)
 
@@ -60,6 +67,8 @@ VG_KEY=xxx-secret-xxx
 (samples "sa")
 ```
 =======
+=======
+>>>>>>> e76a0794449a9f6e2fa6245bf6d33de601630da3
 (player my-api-key "eu" generic-player-id)
 
 ;; Get data from randomly sampled matches
