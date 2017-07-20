@@ -1,6 +1,7 @@
 (ns kraken.core
   (:require [clj-http.lite.client :as client]
-            [cheshire.core :refer :all]))
+            [cheshire.core :refer :all]
+            [environ.core :refer [env]]))
 
 ;; Utilities
 
@@ -9,32 +10,35 @@
   (str "https://api.dc01.gamelockerapp.com/shards/" region "/" endpoint))
 
 (defn- headers
-  [api-key]
-  {"Authorization" api-key
+  []
+  {"Authorization" (env :vg-key)
    "Accept" "application/vnd.api+json"})
 
 ;; API
 
 (defn api-response
+  "Returns raw data from endpoint"
   [url headers & params]
   (client/get url {:headers headers
                    :params params}))
 
 (defn- plural-endpoint
+  "Returns a function to get data from an endpoint that returns a collection of objects"
   [endpoint]
-  (fn [api-key region & params]
+  (fn [region & params]
     (->
       (url region endpoint)
-      (api-response (headers api-key) params)
+      (api-response (headers) params)
       :body
       (parse-string true))))
 
 (defn- singular-endpoint
+  "Returns a function to get data from an endpoint that returns a single object"
   [endpoint]
-  (fn [api-key region id]
+  (fn [region id]
     (->
       (url region (str endpoint "/" id))
-      (api-response (headers api-key))
+      (api-response (headers))
       :body
       (parse-string true))))
 
