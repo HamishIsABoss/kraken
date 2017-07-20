@@ -9,8 +9,7 @@
   [region endpoint]
   (str "https://api.dc01.gamelockerapp.com/shards/" region "/" endpoint))
 
-(defn- headers
-  []
+(def headers
   {"Authorization" (env :vg-key)
    "Accept" "application/vnd.api+json"})
 
@@ -18,7 +17,7 @@
 
 (defn api-response
   "Returns raw data from endpoint"
-  [url headers & params]
+  [url & params]
   (client/get url {:headers headers
                    :params params}))
 
@@ -28,7 +27,7 @@
   (fn [region & params]
     (->
       (url region endpoint)
-      (api-response (headers) params)
+      (api-response params)
       :body
       (parse-string true))))
 
@@ -38,7 +37,7 @@
   (fn [region id]
     (->
       (url region (str endpoint "/" id))
-      (api-response (headers))
+      api-response
       :body
       (parse-string true))))
 

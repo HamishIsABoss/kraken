@@ -1,4 +1,4 @@
-(defproject org.clojars.hamish/kraken "1.1.0"
+(defproject org.clojars.hamish/kraken "1.1.1"
   :description "A wrapper for the Vainglory API"
   :url "https://github.com/HamishIsABoss/kraken"
   :license {:name "Eclipse Public License"
