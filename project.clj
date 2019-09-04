@@ -1,6 +1,6 @@
 (defproject org.clojars.hamish/kraken "1.1.1"
   :description "A wrapper for the Vainglory API"
-  :url "https://github.com/HamishIsABoss/kraken"
+  :url "https://github.com/hmccreanor/kraken"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
